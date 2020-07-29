@@ -1,14 +1,15 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sample1204'
+app.config["SECRET_KEY"] = "sample1204"
 
-@app.router('/', methods=['GET'])
+
+@app.route("/", methods=["GET"])
 def index():
-    username = "Kota"
+    username = "gop50k"
     birth_day = {"year": 2000, "month": 11, "day": 25}
-    actresses = ["aaa", "bbb", "ccc"]
-    comedians = ["ddd", "eee", "fff"]
+    actresses = ["有村架純", "中条あやみ", "石原さとみ"]
+    comedians = ["和牛", "ジャルジャル", "霜降り明星"]
 
     return render_template("index.html",
                            username=username, birth_day=birth_day,
